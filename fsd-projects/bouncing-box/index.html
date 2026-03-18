@@ -29,7 +29,6 @@
   <body class="board">
     <!-- HTML for the box -->
     <div class="box">?</div>
-
     <script>
       (function () {
         "use strict";
@@ -69,7 +68,7 @@
 
         // TODO 2 - Variable declarations
         var positionX = 0;
-        var points = 1;
+        var points = 0;
         var speed = 10;
 
         /**
@@ -98,8 +97,8 @@
          */
         function handleBoxClick() {
           positionX = 0;
-          changeBoxText(points)
           points = points + 1; // Adds 1 to points
+          changeBoxText(points)
           speed = 3 * points + 10;
         }
       })();
