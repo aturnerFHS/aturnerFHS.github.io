@@ -78,7 +78,7 @@
          */
         function update() {
           moveBoxTo(positionX); // Moves box to right edge
-          positionX = positionX + 10; // Add 10 to positionX
+          positionX = positionX + speed; // Add 10 to positionX
           if (positionX >= boardWidth) {
             speed *= -1;
           }
@@ -97,7 +97,7 @@
         function handleBoxClick() {
           positionX = 0;
           points = points + 1; // Adds 1 to points
-          changeBoxText(points)
+          changeBoxText(points);
           speed = 3 * points + 10;
         }
       })();
