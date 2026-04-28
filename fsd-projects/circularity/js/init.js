@@ -14,25 +14,21 @@ var init = function (window) {
         
         window.opspark.game = {};
         var game = window.opspark.game;
-        
+    }
         ///////////////////
         // PROGRAM SETUP //
         ///////////////////
-        
+
         // TODO 1 : Declare and initialize our variables
         var circle;
-        var cirles = [drawCircle];
-
-
+        var circles = [drawCircle];
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
-            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);)
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
             circles.push(circle);
         }
-
-        
 
 
         // TODO 3 : Call the drawCircle() function
@@ -48,8 +44,6 @@ var init = function (window) {
         for (var i = 0; i < 50; i++) {
             drawCircle();
         }
-
-
 
         ///////////////////
         // PROGRAM LOGIC //
@@ -68,6 +62,7 @@ var init = function (window) {
             physikz.updatePosition(circles[3]);
             physikz.updatePosition(circles[4]);
             physikz.updatePosition(circles[5]);
+            */
             // TODO 5 : Call game.checkCirclePosition() on your circles
             /*
             game.checkCirclePosition(circles[1]);
@@ -75,17 +70,13 @@ var init = function (window) {
             game.checkCirclePosition(circles[3]);
             game.checkCirclePosition(circles[4]);
             game.checkCirclePosition(circles[5]);
-
+            */
             // TODO 8 / TODO 9 : Iterate over the array
             for (var i = 0; i < circles.length; i++) {
              physikz.updatePosition(circles[i]);
              game.checkCirclPosition(circles[i]);
             }
-
-            
-        
-    
-        /* 
+            /*
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
@@ -96,23 +87,23 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            
+
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             if (circle.x < 0) {
                 circle.x = 0;
             }
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-            if ( circle.x < 0) {
+            else if ( circle.x < 0) {
                 circle.x = canvas.width;
             }
             if (circle.y < 0) {
                 circle.y = canvas.height
             }
-            if ( circle.y > canvas.height) {
+            else if ( circle.y > canvas.height) {
                 circle.y = 0;
             }
-        
+
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
         /////////////////////////////////////////////////////////////
@@ -127,7 +118,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-};
+}
 
 // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
@@ -136,5 +127,5 @@ if((typeof process !== 'undefined') &&
     module.exports = init;
     }
 }
-}
+    
     
