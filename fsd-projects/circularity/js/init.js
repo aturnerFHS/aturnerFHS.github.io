@@ -10,7 +10,7 @@ var init = function (window) {
   window.opspark.makeGame = function () {
     window.opspark.game = {};
     var game = window.opspark.game;
-  };
+    
   ///////////////////
   // PROGRAM SETUP //
   ///////////////////
@@ -82,12 +82,12 @@ var init = function (window) {
       circle.x = 0;
     }
     // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-    else if(circle.x < 0) {
+    else if (circle.x < 0) {
       circle.x = canvas.width;
     }
-    if(circle.y < 0) {
+    if (circle.y < 0) {
       circle.y = canvas.height;
-    } else if(circle.y > canvas.height) {
+    } else if (circle.y > canvas.height) {
       circle.y = 0;
     }
   }; // YOUR TODO 6 CODE ENDS HERE //////////////////////////
@@ -97,19 +97,21 @@ var init = function (window) {
 
   view.addChild(fps);
   app.addUpdateable(fps);
+  
   game.circle = circle;
   game.circles = circles;
   game.drawCircle = drawCircle;
   game.update = update;
 
   app.addUpdateable(window.opspark.game);
-
+  };
+};
   // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
   if (
-    typeof process !== "undefined" &&
+    typeof process !== "undefined" && 
     typeof process.versions.node !== "undefined"
-  ) {
+   ) {
     // here, export any references you need for tests //
     module.exports = init;
   }
-};
+
