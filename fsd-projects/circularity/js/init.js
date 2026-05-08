@@ -68,7 +68,7 @@ var init = function (window) {
     // TODO 8 / TODO 9 : Iterate over the array
     for (var i = 0; i < circles.length; i++) {
       physikz.updatePosition(circles[i]);
-      game.checkCirclPosition(circles[i]);
+      game.checkCirclePosition(circles[i]);
     }
   }
   /*
@@ -78,7 +78,7 @@ var init = function (window) {
         */
   game.checkCirclePosition = function (circle) {
     // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-    if(circle.x > canvas.width) {
+    if (circle.x > canvas.width) {
       circle.x = 0;
     }
     // TODO 6 : YOUR CODE STARTS HERE //////////////////////
@@ -87,10 +87,11 @@ var init = function (window) {
     }
     if (circle.y < 0) {
       circle.y = canvas.height;
-    } else if (circle.y > canvas.height) {
+    } 
+    else if (circle.y > canvas.height) {
       circle.y = 0;
     }
-  }; // YOUR TODO 6 CODE ENDS HERE //////////////////////////
+  } // YOUR TODO 6 CODE ENDS HERE //////////////////////////
   /////////////////////////////////////////////////////////////
   // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
   /////////////////////////////////////////////////////////////
@@ -103,13 +104,13 @@ var init = function (window) {
   game.drawCircle = drawCircle;
   game.update = update;
 
-  app.addUpdateable(window.opspark.game);
+  app.addUpdateable(window.opspark.game)
   };
 };
   // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
   if (
-    typeof process !== "undefined" && 
-    typeof process.versions.node !== "undefined"
+    typeof process !== "undefined" () && 
+    typeof process.versions.node !== "undefined" ()
    ) {
     // here, export any references you need for tests //
     module.exports = init;
